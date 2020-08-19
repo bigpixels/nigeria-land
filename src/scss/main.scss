@@ -1,0 +1,373 @@
+@import 'reset';
+@import 'var';
+@import 'particles';
+@import 'fonts';
+@import 'responsive-txt';
+
+.body, html {
+	background-color: #190219;
+	overflow-x: hidden !important;
+	background: url('../img/dust.png') no-repeat center / cover;
+	width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border: 0;
+	outline: none;
+}
+
+.container {
+	max-width: 934px;
+	padding: 0 20px;
+	margin: auto;
+}
+
+//main
+	.main {
+		background: url('../img/player.png') no-repeat 70% 7%/ 27%;
+	}
+
+	.clickball {
+		padding: 50px 0;
+		position: relative;
+		&__inner {
+			max-width: 600px;
+			@include classic-flex;
+			z-index: 1;
+			position: relative;
+		}
+		&__img {
+			position: absolute;
+			width: 27%;
+			&_left {
+				left: 0;
+				top: 0;
+			}
+			&_right {
+				right: 0;
+				top: 0;
+			}
+		}
+	}
+
+	.sign-up {
+		position: relative;
+		z-index: 1;
+		&__inner {
+			max-width: 415px;
+		}
+		&__img {
+			position: absolute;
+			&_right{
+				right: 0;
+			}
+			&_left {
+				width: 20%;
+				left: 0;
+				z-index: -1;
+			}
+		}
+	}
+
+	.money {
+		padding: 25px 0 15px 0;
+	}
+
+	.instruction {
+		position: relative;
+		padding: 55px 0;
+		z-index: 2;
+		&__inner {
+			max-width: 700px;
+			@include classic-flex;
+			align-items: center;
+			position: relative;
+			&::before {
+				@include green-arrow;
+				@include animation-pulse;
+				bottom: 260px;
+				left: -270px;
+			}
+			&::after {
+				@include green-arrow;
+				@include animation-pulse;
+				bottom: 560px;
+    			right: -500px;
+			}
+		}
+		&__desc {
+			display: block;
+			text-align: center;
+			color: $color-paragraph;
+			line-height: 1.3;
+		}
+	}
+
+	.we-offer {
+		position: relative;
+		&__img {
+			position: absolute;			
+			&_center {
+				width: 100%;
+				@include center;
+				top: -50px;
+			}
+			&_right {
+				width: 25%;
+				right: 0;
+				top: -400px;
+			}
+		}
+		&__inner {
+			@include classic-flex;
+			padding: 30px 0 50px 0;
+			position: relative;
+			&::before {
+				@include green-arrow;
+				@include animation-pulse;
+				bottom: 115px;
+    			left: -270px;
+			}
+			&::after {
+				@include green-arrow;
+				@include animation-pulse;
+				bottom: 340px;
+				right: -180px;
+			}
+		}
+		&__inner-item {
+			flex-basis: 20%;
+			&:nth-child(2n) {
+				padding-top: 40px;
+			}
+		}
+		&__inner-border {
+			width: 100px;
+			height: 85px;
+			position: relative;
+			border: 2px solid #533d43;
+			transform: skew(-8deg);
+			margin: 0 auto;
+		}
+		&__inner-bgi {
+			background: url('../img/we-offer_field-bgi.png') no-repeat center / cover;
+			width: 120px;
+			height: 102px;
+			position: absolute;
+			z-index: 1;
+			@include center;
+		}
+		&__icon {
+			width: 40px;
+			height: 40px;
+			display: block;
+			position: absolute;
+			@include center;
+		}
+		&__inner-desc {
+			color: $color-main;
+			line-height: 1.3;
+		}
+	}
+
+	.registration {
+		position: relative;
+		padding: 50px 0 65px 0;
+		z-index: 1;
+	}
+//end main
+
+	.footer {
+		padding-bottom: 30px;
+		position: relative;
+		&__logos {
+			@include classic-flex;
+			position: relative;
+			&::after {
+				@include green-arrow;
+				@include animation-pulse;
+				bottom: 10px;
+				right: -100px;
+			}
+		}
+		&__logos-item {
+			@include classic-flex;
+			flex-wrap: nowrap;
+			flex-basis: 30%;
+		}
+		&__logos-img {
+			z-index: 1;
+			margin: 5px;
+		}
+		&__img {
+			position: absolute;
+			&_left {
+				left: 0;
+				bottom: 0;
+				width: 18%;
+			}
+			&_right {
+				right: 0;
+				bottom: 0;
+				width: 23%;
+			}
+		}
+		&__copyright {
+			display: block;
+			text-align: center;
+			color: $color-copyright;
+		}
+	}
+
+//@media
+	@media screen and (max-width: 1199px) {
+		.instruction__inner {
+			margin: 0 auto;
+		}
+		.we-offer__img_right {
+			display: none;
+		}
+		.sign-up__img_left {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 991px) {
+		.main {
+			background: none;
+		}
+
+		.clickball__inner {
+			margin: 0 auto;
+		}
+		.clickball__img {
+			display: none;
+		}
+
+		.footer__img {
+			display: none;
+		}
+		.sign-up__inner {
+			margin: 0 auto;
+		}
+		.field__money {
+			margin: 0 auto;
+		}
+		.field__secondary_up-to {
+			margin-left: 6.5%;
+			
+		}
+		.field__secondary_awaits {
+			margin-left: 32.5%;
+			margin-right: 3%;
+		}
+		
+		.footer__logos-item {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.button__primary {
+			right: 0;
+			width: 80%;
+		}
+
+		.form {
+			justify-content: center;
+		}
+		.form__inner-item {
+			flex-basis: 100%
+		}
+		.form__field {
+			display: block;
+			margin: 0 auto;
+		}
+		.form__field-registration {
+			margin-left: 6%;
+		}
+
+		.button__primary_go-go-go {
+			right: 1%;
+			flex-basis: 91%;
+			padding: 20px !important;
+		}
+	}
+
+	@media screen and (max-width: 623px) {
+		.instruction {
+			padding: 55px 0 160px 0;
+		}
+		.instruction__inner {
+			justify-content: center;
+		}
+		.instruction__inner .field {
+			margin: 0 auto;
+			&::before, &::after {
+				display: none;
+			}
+		}
+		.instruction__item:nth-child(2) {
+			width: 83%;
+			position: absolute;
+			bottom: -120px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.instruction__desc {
+			margin: 20px auto;
+		}
+
+		.we-offer__inner {
+			display: block;
+		}
+
+		.we-offer__inner-item {
+			padding-bottom: 20px;
+		}
+
+		.we-offer__inner-item:nth-child(2n) {
+			padding-top:0;
+		}
+
+		.form__field-registration {
+			margin-left: 4.5%;
+		}
+		.form__field-registration {
+			top: -50px;
+		}
+	}
+
+	@media screen and (max-width: 499px) {
+		.clickball__inner {
+			display: block;
+		}
+		.clickball__inner .field {
+			margin: 20px auto 0 auto;
+		}
+		.form__field-registration {
+			margin-left: 3.5%;
+		}
+	}
+
+	@media screen and (max-width: 420px) {
+		.field__secondary_up-to {
+			margin-left: 2.5%;
+		}
+		.button__primary {
+			padding: 45px 32px;
+		}
+		.form__field-registration {
+			margin-left: 2.5%;
+		}
+	}
+	@media screen and (max-width: 320px) {
+		.form__field-registration {
+			margin-left: 0;
+		}
+	}
+//end @media

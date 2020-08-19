@@ -1,0 +1,137 @@
+$color-main: #fff;
+$color-secondary: #000;
+$color-paragraph: #a3a3a3;
+// $color-title: #818b95;
+// $color-subtitle: #99a9ae;
+// $color-adress: #aeb7ba; 
+$color-warning: #ffe900;
+$color-danger: #f6772c;
+$color-info: #533d43;
+$color-success: #8ab539;
+$color-copyright: #6e6c6e;
+
+@mixin classic-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+@mixin content-block-absolute {
+    content: '';
+    display: block;
+    position: absolute;
+}
+ 
+@mixin center {
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+@mixin green-arrow {
+    @include content-block-absolute;
+    background: url('../img/arrow.png') no-repeat center / contain;
+    width: 45px;
+    height: 16px;
+}
+
+@mixin white-arrows-customers {
+    @include content-block-absolute;
+    background: url('../img/arrows.png') no-repeat center / contain;
+    width: 50px;
+    height: 11px;
+    top: 34px;
+    right: 20px;
+}
+
+@mixin money-arrows-1 {
+    @include content-block-absolute;
+    background: url('../img/money_arrows-1.png') no-repeat center / contain;
+    width: 146px;
+    height: 18px;
+    top: 25%;
+    left: 150%;
+    @media screen and (max-width: 991px) {
+        left: 110%;
+    }
+}
+
+@mixin money-arrows-2 {
+    @include content-block-absolute;
+    background: url('../img/money_arrows-2.png') no-repeat center / contain;
+    width: 55px;
+    height: 18px;
+    top: 16px;
+    right: 120%;
+}
+
+@mixin instruction-arrows-1 {
+    @include content-block-absolute;
+    background: url('../img/instruction_arrows-1.png') no-repeat center / contain;
+    width: 144px;
+    height: 33px;
+    top: -100px;
+    right: 100px;
+}
+
+@mixin instruction-arrows-2 {
+    @include content-block-absolute;
+    background: url('../img/instruction_arrows-2.png') no-repeat center / contain;
+    width: 71px;
+    height: 16px;
+    top: -50px;
+    right: 100px;
+}
+
+@mixin instruction-arrows-3 {
+    @include content-block-absolute;
+    background: url('../img/instruction_arrows-3.png') no-repeat center / contain;
+    width: 98px;
+    height: 22px;
+    top: 175px;
+    right: 130px;
+}
+
+//animation
+@mixin animation-spin {
+    animation: spin 1s ease 0s infinite alternate;
+    @keyframes spin {
+        0% {
+            opacity: 0.5;
+        }
+        100% {
+            right: 105%;
+            opacity: 1;
+        }
+    }
+}
+
+@mixin animation-pulse {
+    animation: pulse 1s ease 0s infinite alternate;    
+    @keyframes pulse {
+        0% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1.0;
+        }
+    }
+}
+
+@mixin animation-move-light {
+	animation: move-light 0.5s;
+    @keyframes move-light {
+        from {
+            transform: translateX(90px) skewX(-45deg);
+        } to {
+            transform: translateX(345px) skewX(-45deg);
+        }
+    }
+    @media screen and (max-width: 991px) {
+	    animation: move-light none;
+    }
+}
+
+//end animation

@@ -1,0 +1,362 @@
+@import 'responsive-txt';
+
+.button {
+	display: block;
+	height: auto;
+	position: relative;
+	&__primary {
+		color: $color-secondary;
+		background: url('../img/link-button-1.png') no-repeat center / cover;
+		width: 100%;
+		padding: 66px 38px 62px 38px;
+		right: 15%;
+		font-family: 'Montserrat-BlackItalic';
+		&_we-offer {
+			right: 0;
+			margin: 0 auto;
+			&:before {
+				top: 46px !important;
+				height: 47% !important;
+			}
+			&::after {
+				@include green-arrow;
+				@include animation-pulse;
+				bottom: 150px;
+    			left: -600px;
+			}
+		}
+		&_go-go-go {
+			width: 27%;
+			right: 0;
+			background: url('../img/link-button-2.png') no-repeat center / cover;
+			padding: 16px 0;
+			transition-duration: 0.5s;
+			&:before {
+				opacity: 0;
+			}
+			&:hover {
+				transform: skew(-15deg);
+			}
+		}
+	}
+	&:before {
+		@include content-block-absolute;
+		top: 36px;
+		left: 0;
+		width: 10px;
+		height: 56%;
+		background-color: rgba(#fff, 0.6);
+		transform: translateX(-40em) skewX(-120deg);
+	}
+	&:hover {
+		&:before {
+			@include animation-move-light;
+		}
+	}
+}
+
+.field {
+	display: block;
+	transform: skew(-10deg);
+	text-transform: uppercase;
+	max-width: 112px;
+	padding: 12px;
+	font-family: 'Montserrat-Italic';
+	position: relative;
+	text-align: center;
+	&__primary {
+		text-align: left;
+		line-height: 1.6;
+		background-image: -moz-linear-gradient( 0deg, rgb(22,69,21) 0%, rgb(144,186,59) 100%);
+		background-image: -webkit-linear-gradient( 0deg, rgb(22,69,21) 0%, rgb(144,186,59) 100%);
+		background-image: -ms-linear-gradient( 0deg, rgb(22,69,21) 0%, rgb(144,186,59) 100%);
+	}
+	&__secondary {
+		border-left: 2px solid;
+		border-right: 2px solid;
+		border-image: linear-gradient(to right top, rgb(22,69,21) 0%, rgb(144,186,59) 100%, rgb(55, 100, 31));
+		border-image-slice: 1;
+		&_border-top {
+			border-top: 2px solid;
+		}
+		&_border-bot {
+			border-bottom: 2px solid;;
+		}
+		&_up-to {
+			margin-left: 2.5%;
+		}
+		&_awaits {
+			margin-left: 28%;
+		}
+	}
+	&__money {
+		padding: 15px 20px;
+		background-color: $color-main;
+		position: relative;
+		z-index: 1;
+	}
+	&__registration {
+		padding: 17px;
+		position: absolute;
+		top: -55px;
+		left: 10px;
+	}
+	&__instruction-numbers {
+		border: 4px solid #190219;
+		background: rgb(217,167,0);
+		background: linear-gradient(90deg, rgba(217,167,0,1) 0%, rgba(253,254,0,1) 100%);
+		color: $color-secondary;
+		width: 20px;
+		position: absolute;
+		left: -25px;
+		top: -20px;
+		transform: skew(-5deg);
+		line-height: 0.5;
+	}
+	&_padding-instruction {
+		padding: 15px 35px;
+	}
+	&_mxw-95 {
+		max-width: 95px;
+	}
+	&_mxw-225 {
+		max-width: 225px;
+	}
+	&_mxw-163 {
+		max-width: 163px;
+	}
+	&_mxw-230 {
+		max-width: 230px;
+	}
+	&_mxw-245 {
+		max-width: 245px;
+	}
+	&_mxw-250 {
+		max-width: 250px;
+	}
+	&_mxw-280 {
+		max-width: 280px;
+	}
+	&_mxw-320 {
+		max-width: 320px;
+	}
+	&_mxw-340 {
+		max-width: 340px;
+	}
+	&_mxw-370 {
+		max-width: 370px;
+	}
+	&_color-secondary {
+		color: $color-secondary;
+	}
+	&_color-main{
+		color: $color-main;
+	}
+	&_money-arrows-1 {
+		&::before {
+			@include money-arrows-1;
+			@include animation-pulse;				
+		}
+	}
+	&_money-arrows-2 {
+		&::after {
+			@include money-arrows-2;
+			@include animation-spin;
+		}
+	}
+	&_instruction-arrows-1 {
+		&::before {
+			@include instruction-arrows-1;
+			@include animation-pulse;
+		}
+	}
+	&_instruction-arrows-2 {
+		&::before {
+			@include instruction-arrows-2;
+			@include animation-pulse;
+		}
+	}
+	&_instruction-arrows-3 {
+		&::after {
+			@include instruction-arrows-3;
+			@include animation-pulse;
+		}
+	}
+	&_white-arrows-customers {
+		&::after {
+			@include white-arrows-customers;
+		}
+	}
+	&_green-arrow-customers {
+		&::before {
+			@include green-arrow;
+			@include animation-pulse;
+			bottom: -30px;
+    		right: 0;
+		}
+	}
+}
+
+.form {
+	position: relative;
+	@include classic-flex;
+	&__inner-item {
+		position: relative;
+		flex-basis: 33.3%;
+	}
+	&__label {
+		opacity: 0.3;
+		position: absolute;
+		top: 20px;
+		left: 10%;
+	}
+	&__field {
+		display: block;
+		padding: 20px 20px;
+		transform: skew(-8deg);
+		width: 83%;
+	}
+	&__field:focus {
+		outline: none;
+	}
+	&__field:focus + &__label {
+		outline: none;
+		opacity: 0;
+	}
+	&__field:valid {
+		background-color: $color-success;
+	}
+	&__field:valid + &__label {
+		outline: none;
+		opacity: 0;
+	}
+	&__field:invalid:not(:focus):not(:placeholder-shown) {
+		background-color: $color-danger;
+	}
+	&__field:invalid:not(:focus):not(:placeholder-shown) + &__label {
+		opacity: 0;
+	}
+	&__field:invalid:not(:focus):not(:placeholder-shown) ~ .requirements {
+		max-height: 200px;
+		padding: 0 30px 20px 50px;
+	}
+	
+	.requirements {
+		padding: 0 30px 0 50px;
+		color: $color-warning;
+		max-height: 0;
+		transition: 0.28s;
+		overflow: hidden;
+		text-align: center;
+	}
+	&::after {
+		@include green-arrow;
+		@include animation-pulse;
+		bottom: 200px;
+		right: -400px;
+	}
+}
+  
+.title {
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	&_Montserrat-Light {
+		font-family: "Montserrat-Light";
+	}
+	&_Montserrat-BlackItalic {
+		font-family: 'Montserrat-BlackItalic';
+	}
+	&_Montserrat-SemiBoldItalic {
+		font-family: "Montserrat-SemiBoldItalic";
+	}
+	&_Montserrat-Black {
+		font-family: 'Montserrat-Black';
+	}
+	&_Montserrat-Regular {
+		font-family: 'Montserrat-Regular';
+	}
+	&_Montserrat-ExtraBoldItalic {
+		font-family: 'Montserrat-ExtraBoldItalic';
+	}
+	&_Montserrat-Italic {
+		font-family: 'Montserrat-Italic';
+	}
+	&_fsz-12 {
+		font-size: 12px;
+	}
+	&_fsz-14 {
+		@include fluidFontSize (12px, 14px, 320px, 991px, 14px);
+	}
+	&_fsz-18 {
+		@include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+	}
+	&_fsz-20 {
+		@include fluidFontSize (14px, 20px, 320px, 991px, 20px);
+	}
+	&_fsz-22 {
+		@include fluidFontSize (14px, 22px, 320px, 991px, 22px);
+	}
+	&_fsz-24 {
+		@include fluidFontSize (14px, 24px, 320px, 991px, 24px);
+	}
+	&_fsz-32 {
+		@include fluidFontSize (22px, 32px, 320px, 991px, 32px);
+	}
+	&_fsz-36 {
+		@include fluidFontSize (22px, 36px, 320px, 991px, 32px);
+	}
+	&_fsz-46 {
+		@include fluidFontSize (20px, 46px, 320px, 991px, 32px);
+	}
+	&_fsz-66 {
+		@include fluidFontSize (46px, 66px, 320px, 991px, 66px);
+	}
+	&_fsz-140 {
+		@include fluidFontSize (80px, 140px, 320px, 991px, 140px);
+	}
+	&_color-main {
+		color: $color-main;
+	}
+	&_color-warning {
+		color: $color-warning;
+	}
+}
+
+.subtitle {
+	color: $color-secondary;
+	font-family: 'Lato-Regular';
+	@include fluidFontSize(14px, 16px, 320px, 767px, 16px);
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.margin {
+	/*max-w-767_mt*/
+	
+	/*end max-w-767_mt*/
+
+	/*mt*/
+	&_mt-20 {
+		margin-top: 20px;
+	}
+	/*end mt*/
+
+	/*mb*/
+	&_mb-21 {
+		margin-bottom: 21;
+	}
+	&_mb-120 {
+		margin-bottom: 120px;
+	}
+	/*end mb*/
+
+	/*ml*/
+	
+	/*end ml*/
+
+	/*mr*/
+
+	/*end mr*/
+}
+
