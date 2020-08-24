@@ -323,14 +323,6 @@
 	}
 }
 
-.subtitle {
-	color: $color-secondary;
-	font-family: 'Lato-Regular';
-	@include fluidFontSize(14px, 16px, 320px, 767px, 16px);
-	font-weight: 700;
-	text-transform: uppercase;
-}
-
 .margin {
 	/*max-w-767_mt*/
 	
