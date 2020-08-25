@@ -13,6 +13,7 @@ gulp.task('serve', function() {
         }
     });
     // browserSync.watch("./build", browserSync.reload)
+    gulp.watch("./build/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('sass-compile', function(){
